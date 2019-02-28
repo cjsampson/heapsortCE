@@ -42,7 +42,12 @@ public class Mail implements Comparable<Mail> {
     // Used to sort movies by year
     public int compareTo(Mail mail)
     {
-        if (this.type == mail.type) {
+        int compareResult = this.type.compareTo(mail.type);
+
+
+        if (compareResult > 0 ) {
+            return null;
+        } else if ( compareResult == 0 ) {
             if ( Integer.parseInt(this.mailCode) > Integer.parseInt(mail.mailCode) ) {
                 return -1;
             }
@@ -54,11 +59,10 @@ public class Mail implements Comparable<Mail> {
             if ( Integer.parseInt(this.mailCode) < Integer.parseInt(mail.mailCode) ) {
                 return 1;
             }
+        } else {
+            return null;
         }
 
-        if ( this.type > mail.type ) {
-            
-        }
     }
 
     @Override
