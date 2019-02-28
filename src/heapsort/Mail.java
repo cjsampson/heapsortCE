@@ -17,11 +17,21 @@ public class Mail {
         this.mailCode = this.randomMailCode();
     }
 
-    private String randomMailCode() {
-        return "";
+    public String randomMailCode() {
+        Random random    = new Random();
+        String randomStr = "";
+        int min = 65;
+        int max = 90;
+
+        for ( int i = 0; i < 5; i++ ) {
+            randomStr += Character.toString((char)(min + random.nextInt(max - min + 1)));
+            System.out.println(randomStr);
+        }
+
+        return randomStr;
     }
 
-    private DeliveryType randomType() {
+    public DeliveryType randomType() {
         Random random = new Random();
 
         return DeliveryType.values()[
