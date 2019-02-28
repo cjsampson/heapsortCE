@@ -7,9 +7,9 @@ public class MailTestClient {
 
     public static void main(String[] args) {
         Mail mail = new Mail();
-        String someString = mail.toString();
+        mail.randomMailCode();
+//        String someString = mail.toString();
 
-        System.out.println();
 
 //        Mail[] allMail = {
 //                new Mail(DeliveryType.AIR, "YTWEW"),
