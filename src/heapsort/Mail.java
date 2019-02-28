@@ -3,16 +3,16 @@ package heapsort;
 
 import java.util.Random;
 
-public class Mail {
+public class Mail implements Comparable<Mail> {
     String mailCode;
     DeliveryType type;
 
-    Mail(DeliveryType type, String mailCode) {
+    public Mail(DeliveryType type, String mailCode) {
         this.type = type;
         this.mailCode = mailCode;
     }
 
-    Mail() {
+    public Mail() {
         this.type = this.randomType();
         this.mailCode = this.randomMailCode();
     }
@@ -37,6 +37,32 @@ public class Mail {
         return DeliveryType.values()[
             random.nextInt(DeliveryType.values().length)
         ];
+    }
+
+    // Used to sort movies by year
+    public int compareTo(Mail mail)
+    {
+        int compareResult = this.type.compareTo(mail.type);
+
+
+        if (compareResult > 0 ) {
+            return null;
+        } else if ( compareResult == 0 ) {
+            if ( Integer.parseInt(this.mailCode) > Integer.parseInt(mail.mailCode) ) {
+                return -1;
+            }
+
+            if ( Integer.parseInt(this.mailCode) == Integer.parseInt(mail.mailCode) ) {
+                return 0;
+            }
+
+            if ( Integer.parseInt(this.mailCode) < Integer.parseInt(mail.mailCode) ) {
+                return 1;
+            }
+        } else {
+            return null;
+        }
+
     }
 
     @Override
