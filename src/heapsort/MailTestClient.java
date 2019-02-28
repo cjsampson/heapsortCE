@@ -9,7 +9,8 @@ public class MailTestClient {
         Mail mail = new Mail();
         String someString = mail.toString();
 
-        System.out.println(someString);
+        System.out.println();
+
 //        Mail[] allMail = {
 //                new Mail(DeliveryType.AIR, "YTWEW"),
 //                new Mail(DeliveryType.GROUND, "ASDFF"),
