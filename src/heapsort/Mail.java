@@ -46,7 +46,7 @@ public class Mail implements Comparable<Mail> {
 
 
         if (compareResult > 0 ) {
-            return null;
+            return 1;
         } else if ( compareResult == 0 ) {
             if ( Integer.parseInt(this.mailCode) > Integer.parseInt(mail.mailCode) ) {
                 return -1;
@@ -60,7 +60,7 @@ public class Mail implements Comparable<Mail> {
                 return 1;
             }
         } else {
-            return null;
+            return -1;
         }
 
     }
