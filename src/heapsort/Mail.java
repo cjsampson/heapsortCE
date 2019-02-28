@@ -1,6 +1,8 @@
 package heapsort;
 
 
+import java.util.Random;
+
 public class Mail {
     String mailCode;
     DeliveryType type;
@@ -11,11 +13,13 @@ public class Mail {
     }
 
     private String randomMailCode() {
-        return null;
+        return "AAAAA";
     }
 
     private DeliveryType randomType() {
-        return null;
+        Random random = new Random();
+        return values()[random.nextInt(values().length)];
+        return ;
     }
 
     @Override
